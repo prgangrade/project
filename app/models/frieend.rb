@@ -1,0 +1,3 @@
+class Frieend < ApplicationRecord
+
+end
