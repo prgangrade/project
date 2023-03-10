@@ -2,7 +2,7 @@
 <table border="1" align="center">
 <tr><th><h1>Email</h1></th><th><h1>Accept link</h1></th></tr>
 <% @pendings.each do |pending| %>
-<tr><td><h1 align="center" style="color:blue"><%= pending.email %></h1></td><td><h1><%= link_to "Accept",user_pendings_path(pending) %></h1></td></tr><br><br>
+<tr><td><h1 align="center" style="color:blue"><%= pending.email %></h1></td><td><h1><%= link_to "Accept",new_user_frieend_path(pending.id) %></h1></td></tr><br><br>
 <% end %>
 </table>
 </body>

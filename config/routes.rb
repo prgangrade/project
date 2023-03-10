@@ -3,12 +3,14 @@ Rails.application.routes.draw do
   devise_for :users
   root 'homes#index'
    get "/index", to: "pendings#index"
-   get "/index", to: "friends#index"
+   get "/findex", to: "frieends#index"
    get "/search", to: "homes#search"
   resources :users do
   resources :pendings
+  resources :frieends
   end
-  resources :friends
+  
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

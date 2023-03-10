@@ -53,16 +53,27 @@ Rails.application.configure do
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
 
-  config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
+ 
   # Highlight code that triggered database queries in logs.
   config.active_record.verbose_query_logs = true
 
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
+  config.action_mailer.default_url_options = { host: ENV['MAIL_HOST'] }
 
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.gmail.com',
+    port:                 587,
+    domain:               ENV['MAIL_HOST'],
+    user_name:            'prgangrade@bestpeers.com',
+    password:             'lhwvaciufibuqxbq',
+    authentication:       'plain',
+    enable_starttls_auto: true  
+ }
 
-
+ config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
 
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
