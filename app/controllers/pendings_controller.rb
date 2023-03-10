@@ -20,7 +20,7 @@ class PendingsController < ApplicationController
     @pending.build_user
     end
     def create
-        byebug
+        
     @pending = (current_user).pendings.create(email: params[:email])
     if @pending.save!
         redirect_to root_path

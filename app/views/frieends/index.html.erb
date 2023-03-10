@@ -1,8 +1,9 @@
 <body style="background-color:yellow">
 <table border="1" align="center">
-<tr><th><h1>Email</h1></th></tr>
+<tr><th><h1>Email</h1></th><th>Profile</th></tr>
+
 <% @friends.each do |friend| %>
-<tr><td><h1 align="center" style="color:blue"><%= friend.email %></h1></td><td></tr><br><br>
+<tr><td><h1 align="center" style="color:blue"><%= friend.email %></h1></td><td><h1><%= link_to "profile", find_path(id: friend.id) %></h1></td></tr><br><br>
 <% end %>
 </table>
 </body>

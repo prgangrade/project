@@ -1,7 +1,6 @@
 class FrieendsController < ApplicationController
     def index
-        byebug
-        @friends = (current_user).frieends
+        @friends = current_user.frieends
         
     end
     def new
@@ -10,10 +9,14 @@ class FrieendsController < ApplicationController
 
     end
     def create
+        
         byebug
-        @friend = (current_user).frieends.create(email: params[:email])
+        @friend = current_user.frieends.create(email: params[:email])
         if @friend.save!
             redirect_to root_path
         end
+    end
+    def find
+       
     end
 end

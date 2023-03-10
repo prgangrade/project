@@ -5,9 +5,11 @@ Rails.application.routes.draw do
    get "/index", to: "pendings#index"
    get "/findex", to: "frieends#index"
    get "/search", to: "homes#search"
+   get "/find", to: "frieends#find"
+
   resources :users do
-  resources :pendings
-  resources :frieends
+    resources :pendings
+    resources :frieends
   end
   
 
