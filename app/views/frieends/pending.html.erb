@@ -1,0 +1,9 @@
+<body style="background-color:yellow">
+<h1 align="center" style="color:red">Pending list</h1>
+<table border="1" align="center">
+<tr><th><h1>Email</h1></th><th><h1>Accept link</h1></th></tr>
+<% @friends.each do |friend| %>
+<tr><td><h1 align="center" style="color:blue"><%= friend.user.email %></h1></td><td><h1><%= link_to "Accept","/change" %></h1></td></tr><br><br>
+<% end %>
+</table>
+</body>

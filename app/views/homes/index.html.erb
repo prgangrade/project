@@ -10,8 +10,9 @@
 
 
 <% end %><br>
-<h4 style><%=link_to "FRIENDS_LIST","/findex"%></h4>
-<h4><%= link_to "PENDING LIST", "/index" %><h4>
+
+<h4 style><%=link_to "FRIENDS_LIST","/friend" %></h4>
+<h4><%= link_to "PENDING LIST", "/pend" %><h4>
 <div align="center">
 <h1>welcome to home page</h1>
 <%= form_with url: "/search", method: :get do |form| %>
@@ -22,7 +23,7 @@
 <table border = "1" style= "background-color:yellow">
 <tr><th>Email</th><th>Firstname</th><th>Lastname</th><th>Date_of_birth</th><th>City</th><th>Invite link</th><tr>
 <% @users.each  do |user| %>
-<tr><td><h3><%= user.email %></h3></td> <td><h3><%= user.firstname %></h3></td> <td><h3><%= user.lastname %></h3></td> <td><h3><%= user.DOB %></h3></td> <td><h3><%= user.city %></h3></td><td> <h3><%= link_to "INVITE", new_user_pending_path(user.id) %></h3></td><br>
+<tr><td><h3><%= user.email %></h3></td> <td><h3><%= user.firstname %></h3></td> <td><h3><%= user.lastname %></h3></td> <td><h3><%= user.DOB %></h3></td> <td><h3><%= user.city %></h3></td><td> <h3><%= link_to "INVITE", find_path(user.id) %></h3></td><br>
 <% end %>
 </table>
 

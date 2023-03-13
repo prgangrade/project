@@ -1,0 +1,14 @@
+<body style="background-color:yellow">
+<h1 align="center" style="color:red">Welcome to friend list</h1>
+<table border="1" align="center">
+<tr><th><h1>Email</h1></th><th><h1>firstname</h1></th><th><h1>lastname</h1></th><th><h1>DOB</h1></th><th><h1>city</h1></th></tr>
+<% @friends.each do |friend| %>
+<tr><td><h1 align="center" style="color:blue"><%= friend.user.email %></h1></td>
+<td><h1 align="center" style="color:blue"><%= friend.user.firstname %></h1></td>
+<td><h1 align="center" style="color:blue"><%= friend.user.lastname %></h1></td>
+<td><h1 align="center" style="color:blue"><%= friend.user.DOB %></h1></td>
+<td><h1 align="center" style="color:blue"><%= friend.user.city %></h1></td>
+</tr><br><br>
+<% end %>
+</table>
+</body>
