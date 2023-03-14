@@ -1,10 +1,16 @@
 class HomesController < ApplicationController
   def index
+  
     @users = User.all
+    
   end
 
 
   def search
-  @search = User.find_by(email: params[:email])
+
+    @searches = User.where("email LIKE ?","%" + params[:email] + "%")
+
   end
+
+  
 end

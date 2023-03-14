@@ -1,18 +1,15 @@
 <body style= "background-color:red">
 <% if user_signed_in? %> 
- <div align="center"><h1 style="color:yellow"> Welcome <%= current_user.email %> </h1></div> 
+  <div align="center"><h1 style="color:yellow"> Welcome <%= current_user.email %> </h1></div> 
   <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
 
-  
 <% else %>
   <%= button_to "Sign in", new_user_session_path %>
-  
-
-
 <% end %><br>
 
 <h4 style><%=link_to "FRIENDS_LIST","/friend" %></h4>
 <h4><%= link_to "PENDING LIST", "/pend" %><h4>
+
 <div align="center">
 <h1>welcome to home page</h1>
 <%= form_with url: "/search", method: :get do |form| %>
@@ -20,7 +17,9 @@
   <%= form.text_field :email %>
   <%= form.submit "Search" %>
 <% end %>
-<table border = "1" style= "background-color:yellow">
+
+
+<table border = "1" style = "background-color:yellow">
 <tr><th>Email</th><th>Firstname</th><th>Lastname</th><th>Date_of_birth</th><th>City</th><th>Invite link</th><tr>
 <% @users.each  do |user| %>
 <tr><td><h3><%= user.email %></h3></td> <td><h3><%= user.firstname %></h3></td> <td><h3><%= user.lastname %></h3></td> <td><h3><%= user.DOB %></h3></td> <td><h3><%= user.city %></h3></td><td> <h3><%= link_to "INVITE", find_path(user.id) %></h3></td><br>
