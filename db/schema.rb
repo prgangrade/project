@@ -33,15 +33,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_13_042345) do
     t.index ["user_id"], name: "index_friends_on_user_id"
   end
 
-  create_table "pendings", force: :cascade do |t|
-    t.string "email"
-    t.string "string"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.boolean "status"
-    t.index ["user_id"], name: "index_pendings_on_user_id"
-  end
+
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
