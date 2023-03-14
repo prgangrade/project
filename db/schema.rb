@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_14_124522) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_13_042345) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -61,8 +61,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_14_124522) do
     t.string "lastname"
     t.string "city"
     t.date "DOB"
-    t.string "invitation_token"
     t.datetime "invitation_accepted_at"
+    t.string "invitation_token"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["invited_by_id"], name: "index_users_on_invited_by_id"
     t.index ["invited_by_type", "invited_by_id"], name: "index_users_on_invited_by"
